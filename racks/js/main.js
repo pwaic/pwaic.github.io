@@ -94,7 +94,8 @@
 		$('.carousel').owlCarousel({
 			center: true,
 			loop: true,
-			items:1,
+			autoplay: true,
+			items:3,
 			margin: 30,
 			stagePadding: 0,
 			nav: true,

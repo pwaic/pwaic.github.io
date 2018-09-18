@@ -7554,7 +7554,7 @@ h1, h2, h3, h4, h5,
         background-repeat: no-repeat;
         background-position: center center;
         height: calc(50vh - 117px);
-        min-height: 500px;
+        min-height: 300px;
         position: relative; }
         .owl-carousel.home-slider .slider-item-minor .overlay {
           position: absolute;
@@ -7630,7 +7630,7 @@ h1, h2, h3, h4, h5,
         .owl-carousel.home-slider .slider-item-minor.bread-wrap .slider-text {
           color: #fff;
           height: calc(50vh - 117px);
-          min-height: 450px; }
+          min-height: 250px; }
       .owl-carousel.home-slider .owl-nav .owl-prev span,
       .owl-carousel.home-slider .owl-nav .owl-next span {
         color: #fff; }

@@ -222,12 +222,12 @@ async function start(cur_mode) {
     mode = cur_mode
     
     //load the model 
-    model = await tf.loadModel('model/model.json')
+    const model = await tf.loadModel('model/model.json');
     
     //warm up 
     model.predict(tf.zeros([1, 28, 28, 1]))
     
-    //allow drawing on the canvas 
+    //allow drawing on the canvas
     allowDrawing()
     
     //load the class names

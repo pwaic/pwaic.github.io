@@ -113,6 +113,7 @@ function getFrame() {
 
         //get the image data from the canvas 
         const imgData = getImageData()
+        console.log(imgData)
 
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
@@ -201,7 +202,7 @@ function preprocess(imgData) {
         //convert to a tensor 
         let tensor = tf.browser.fromPixels(imgData, numChannels = 1)
         
-        //resize 
+        //resize
         const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat()
         
         //normalize 

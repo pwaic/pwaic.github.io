@@ -199,7 +199,7 @@ preprocess the data
 function preprocess(imgData) {
     return tf.tidy(() => {
         //convert to a tensor 
-        let tensor = tf.fromPixels(imgData, numChannels = 1)
+        let tensor = tf.browser.fromPixels(imgData, numChannels = 1)
         
         //resize 
         const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat()
@@ -222,9 +222,9 @@ async function start(cur_mode) {
     mode = cur_mode
     
     //load the model 
-    const model = await tf.loadModel('model/model.json');
+    model = await tf.loadLayersModel('model/model.json');
     
-    //warm up 
+    //warm up
     model.predict(tf.zeros([1, 28, 28, 1]))
     
     //allow drawing on the canvas

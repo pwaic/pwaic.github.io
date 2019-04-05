@@ -21,7 +21,7 @@ import urllib.request
 
 """### Getting the list of classes"""
 
-!wget 'https://raw.githubusercontent.com/pwaic/pwaic.github.io/master/projects/SketchAI/sketchAI_classList.txt'
+os.system("""wget 'https://raw.githubusercontent.com/pwaic/pwaic.github.io/master/projects/SketchAI/sketchAI_classList.txt'""")
 
 all_classes = []
 
@@ -166,19 +166,19 @@ print(latex)
 ### Install TensorFlow.js
 """
 
-!pip install tensorflowjs
+os.system("pip install tensorflowjs==0.8.0")
 
 """### Save and convert model"""
 
 model.save('keras.h5')
-!mkdir model
-!tensorflowjs_converter --input_format keras keras.h5 model/
+os.system("mkdir model")
+os.system("tensorflowjs_converter --input_format keras keras.h5 model/")
 
 """### Zip and download model"""
 
-!cp sketchAI_classList.txt model/class_names.txt
+os.system("cp sketchAI_classList.txt model/class_names.txt")
 
-!zip -r model.zip model
+os.system("zip -r model.zip model")
 
 from google.colab import files
 files.download('model.zip')

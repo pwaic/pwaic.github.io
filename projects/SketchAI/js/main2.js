@@ -113,7 +113,6 @@ function getFrame() {
 
         //get the image data from the canvas 
         const imgData = getImageData()
-        console.log(imgData)
 
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
@@ -144,9 +143,9 @@ load the class names
 */
 async function loadDict() {
     if (mode == 'ar')
-        loc = 'model/class_names_ar.txt'
+        loc = 'model2/class_names_ar.txt'
     else
-        loc = 'model/class_names.txt'
+        loc = 'model2/class_names.txt'
     
     await $.ajax({
         url: loc,
